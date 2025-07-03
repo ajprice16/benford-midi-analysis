@@ -1,15 +1,7 @@
 import argparse
 import sys
 from pathlib import Path
-
-# Use absolute imports for the installed package
-try:
-    from benford_midi.analysis import analyze_single_directory, compare_directories
-except ImportError:
-    # Fallback for development/testing
-    import os
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
-    from benford_midi.analysis import analyze_single_directory, compare_directories
+from benford_midi.analysis import analyze_single_directory, compare_directories
 
 def main():
     parser = argparse.ArgumentParser(

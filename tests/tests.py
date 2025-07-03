@@ -5,9 +5,16 @@ import numpy as np
 import pandas as pd
 import tempfile
 import shutil
+import sys
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
+# Add the src directory to Python path
+test_dir = Path(__file__).parent
+src_dir = test_dir.parent / "src"
+sys.path.insert(0, str(src_dir))
+
+# Now import the modules
 from benford_midi.analysis import (
     BenfordTests, classify_benford_compliance, parse_midi, parse_midi_extended,
     analyze_midi_features, process_midi_file, analyze_single_directory,

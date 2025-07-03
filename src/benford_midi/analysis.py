@@ -446,16 +446,6 @@ def print_analysis_summary(results_df, dir_name):
         print(f"  MAD: {results_df['MAD'].mean():.4f}")
         print(f"  Combined p-value: {format_p(results_df['Combined_P'].mean())}")
         
-        # Top and bottom files by Benford score
-        print(f"\nTop 5 most Benford-like files:")
-        top_files = results_df.nlargest(5, 'Benford_Score')[['Name', 'Benford_Score', 'Benford_Category']]
-        for idx, row in top_files.iterrows():
-            print(f"  {row['Name']}: {row['Benford_Score']:.3f} ({row['Benford_Category']})")
-        
-        print(f"\nTop 5 least Benford-like files:")
-        bottom_files = results_df.nsmallest(5, 'Benford_Score')[['Name', 'Benford_Score', 'Benford_Category']]
-        for idx, row in bottom_files.iterrows():
-            print(f"  {row['Name']}: {row['Benford_Score']:.3f} ({row['Benford_Category']})")
 
 
 def analyze_comparison_results(results_dir1, results_dir2, dir1_name, dir2_name):

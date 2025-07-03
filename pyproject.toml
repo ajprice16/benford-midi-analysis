@@ -2,7 +2,7 @@
 name = "benford-midi"
 version = "0.1.0"
 description = "A package for analyzing MIDI files for compliance with Benford's Law."
-authors = ["Your Name <ajprice@mail.wlu.edu>"]
+authors = ["Alex Price <ajprice@mail.wlu.edu>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/ajprice16/benford-midi-analysis"

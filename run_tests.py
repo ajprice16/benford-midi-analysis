@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Test runner script that handles the module path correctly
 """

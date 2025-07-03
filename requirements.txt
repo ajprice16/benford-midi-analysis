@@ -1,0 +1,8 @@
+numpy
+matplotlib
+scipy
+pandas
+mido
+tqdm
+multiprocessing
+```

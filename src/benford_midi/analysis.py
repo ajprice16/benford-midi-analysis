@@ -7,7 +7,7 @@ import mido
 import os
 import warnings
 from pathlib import Path
-from scipy.stats import chi2, uniform, ttest_ind, chi2_contingency, mannwhitneyu
+from scipy.stats import chi2, ttest_ind
 from scipy import stats
 from tqdm import tqdm
 import multiprocessing as mp

@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "benford-midi"
+version = "1.0.0"
+authors = [
+    {name = "Alex Price", email = "ajprice@mail.wlu.edu"},
+]
+description = "A package for analyzing MIDI files for compliance with Benford's Law"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Multimedia :: Sound/Audio :: MIDI",
+]
+keywords = ["benford", "midi", "analysis", "statistics", "music"]
+dependencies = [
+    "numpy>=1.20.0",
+    "pandas>=1.3.0",
+    "matplotlib>=3.5.0",
+    "scipy>=1.7.0",
+    "mido>=1.2.0",
+    "tqdm>=4.60.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "build>=0.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ajprice16/benford-midi-analysis"
+Repository = "https://github.com/ajprice16/benford-midi-analysis"
+Issues = "https://github.com/ajprice16/benford-midi-analysis/issues"
+
+[project.scripts]
+benford-midi = "benford_midi.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+benford_midi = ["*.txt", "*.md"]

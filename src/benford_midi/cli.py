@@ -1,7 +1,14 @@
+#!/usr/bin/env python3
+"""
+Command-line interface for Benford MIDI Analysis package.
+"""
+
 import argparse
 import sys
+import traceback
 from pathlib import Path
-from benford_midi.analysis import analyze_single_directory, compare_directories
+
+from .analysis import analyze_single_directory, compare_directories
 
 def main():
     parser = argparse.ArgumentParser(

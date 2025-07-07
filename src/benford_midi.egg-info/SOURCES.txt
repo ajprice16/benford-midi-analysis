@@ -1,6 +1,11 @@
 LICENSE
+MANIFEST.in
 README.md
+pyproject.toml
+requirements.txt
 setup.py
+examples/basic_usage.py
+examples/comparison_example.py
 src/benford_midi/__init__.py
 src/benford_midi/analysis.py
 src/benford_midi/cli.py
@@ -12,6 +17,6 @@ src/benford_midi.egg-info/entry_points.txt
 src/benford_midi.egg-info/not-zip-safe
 src/benford_midi.egg-info/requires.txt
 src/benford_midi.egg-info/top_level.txt
+tests/__init__.py
 tests/test_analysis.py
-tests/test_tests.py
 tests/tests.py

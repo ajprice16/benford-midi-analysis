@@ -3,6 +3,8 @@
 Quick test script to verify the benford_midi package is working correctly.
 """
 
+import sys
+import subprocess
 import numpy as np
 from pathlib import Path
 

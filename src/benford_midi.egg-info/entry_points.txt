@@ -1,0 +1,2 @@
+[console_scripts]
+benford-midi = benford_midi.cli:main

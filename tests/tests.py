@@ -163,7 +163,8 @@ class TestClassifyBenfordCompliance(unittest.TestCase):
         
     def test_small_sample_classification(self):
         """Test classification with small sample (NaN q_p)"""
-        test_results = (0.6, 0.5, np.nan, 0.4, 0.3, 0.55, 0.45, 0.012, 0.09, 2.2)
+        # Make more tests NaN to get total_tests < 5
+        test_results = (0.6, 0.5, np.nan, np.nan, np.nan, 0.55, 0.45, 0.012, 0.09, 2.2)
         score, category, evidence = classify_benford_compliance(test_results)
         self.assertIsInstance(score, float)
         self.assertIn(category, ['Strong', 'Moderate', 'Weak', 'Non-Benford'])

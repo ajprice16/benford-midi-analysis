@@ -1,0 +1,84 @@
+# Set the default behavior for all files
+* text=auto
+
+# Python files
+*.py text eol=lf
+*.pyw text eol=lf
+*.pyx text eol=lf
+*.pxd text eol=lf
+*.pxi text eol=lf
+
+# Configuration files
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.rst text eol=lf
+*.txt text eol=lf
+*.rtf text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Web files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.xz binary
+*.7z binary
+
+# MIDI files (binary)
+*.mid binary
+*.midi binary
+
+# Audio files
+*.wav binary
+*.mp3 binary
+*.flac binary
+*.aac binary
+*.ogg binary
+
+# Python bytecode
+*.pyc binary
+*.pyo binary
+*.pyd binary
+
+# Archives
+*.egg binary
+*.whl binary
+
+# Exclude from language statistics
+*.min.js linguist-vendored
+*.min.css linguist-vendored
+docs/* linguist-documentation
+examples/* linguist-documentation
+test_data/* linguist-vendored
+sample_data/* linguist-vendored
+
+# Mark certain files as generated
+CI_FIX_SUMMARY.md linguist-generated=true
+ci_test.py linguist-generated=false

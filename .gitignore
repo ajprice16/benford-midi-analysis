@@ -53,6 +53,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+.ruff_cache/
 
 # Translations
 *.mo
@@ -108,6 +109,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.conda/
+.pyenv/
 
 # Spyder project settings
 .spyderproject
@@ -127,27 +130,69 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Pyright
+.pyright/
+
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.vim/
+.sublime-project
+.sublime-workspace
 
 # Project specific
 test_midi_files/
+sample_midi_files/
 results/
 output/
 plots/
+data/
 *.csv
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.svg
+*.pdf
+
+# MIDI files (if not needed for testing)
+*.mid
+*.midi
 
 # Temporary files
 *.tmp
 *.temp
 temp/
 tmp/
+.temporary/
+
+# OS specific
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# CI/CD artifacts
+.github/workflows/test-artifacts/
+.coverage.*
+coverage/
+test-results/
+benchmarks/
+
+# Package distribution
+twine_check.txt
+wheelhouse/
+
+# Virtual environments
+.python-version
+.pythonpath

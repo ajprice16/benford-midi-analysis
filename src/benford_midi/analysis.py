@@ -713,9 +713,12 @@ class BenfordTests:
         benford_cdf = np.log10(sorted_s)
         ks_stat = np.max(np.abs(ecdf - benford_cdf))
         
-        # More accurate p-value calculation
+        # More accurate p-value calculation with proper bounds
         n = len(sorted_s)
         p_value = 2 * np.exp(-2 * (ks_stat * np.sqrt(n) + 0.12)**2)
+        
+        # Ensure p-value is within valid bounds [0, 1]
+        p_value = np.clip(p_value, 0.0, 1.0)
         return ks_stat, p_value
     
     def hotelling_q(self, B=1000):

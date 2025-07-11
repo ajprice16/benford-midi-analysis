@@ -168,10 +168,10 @@ def classify_benford_compliance(test_results):
         descriptive_penalty += 0.05
     
     # Calculate score and apply penalty
-    p_score = sum(p_val * weight for p_val, weight in zip([chi2_p, ks_p, q_p], [test_weights.get(k, 0) for k in ['chi2_p', 'ks_p', 'q_p']]))
-    mad_component = max(0, min(1, (0.02 - mad) / 0.014)) * test_weights['mad']
+    p_score = sum(p_val * weight for p_val, weight in zip([chi2_p, ks_p, q_p], [test_weights.get(k, 0.0) for k in ['chi2_p', 'ks_p', 'q_p']]))
+    mad_component = max(0.0, min(1.0, (0.02 - mad) / 0.014)) * test_weights['mad']
     
-    benford_score = max(0, min(1.0, p_score + mad_component - descriptive_penalty))
+    benford_score = max(0.0, min(1.0, p_score + mad_component - descriptive_penalty))
     
     # Count significant tests (p > 0.05), excluding NaN values
     p_values = [chi2_p, ks_p, m_p, g_p, combined_p]

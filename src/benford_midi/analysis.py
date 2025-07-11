@@ -544,22 +544,32 @@ def perform_statistical_comparison(df1, df2, dir1_name, dir2_name, stats1, stats
             print(f"  Mean score {dir2_name}: {stats2['avg_score']:.3f}")
             print(f"  Result: Data are nearly identical - no meaningful difference")
         else:
-            # Suppress the precision warning for this specific calculation
+            # Suppress the precision and division warnings for this specific calculation
             with warnings.catch_warnings():
                 warnings.filterwarnings("ignore", 
                                       message="Precision loss occurred in moment calculation")
+                warnings.filterwarnings("ignore", 
+                                      message="invalid value encountered in scalar divide")
+                warnings.filterwarnings("ignore", 
+                                      category=RuntimeWarning)
                 t_stat, t_p = ttest_ind(df1['Benford_Score'], df2['Benford_Score'])
             
             print(f"T-test for Benford Score difference:")
             print(f"  Mean score {dir1_name}: {stats1['avg_score']:.3f}")
             print(f"  Mean score {dir2_name}: {stats2['avg_score']:.3f}")
-            print(f"  T-statistic: {t_stat:.3f}, p-value: {format_p(t_p)}")
             
-            if t_p < 0.05:
-                better_dir = dir1_name if stats1['avg_score'] > stats2['avg_score'] else dir2_name
-                print(f"  Result: {better_dir} has significantly higher Benford scores")
-            else:
+            # Handle NaN values from t-test
+            if np.isnan(t_stat) or np.isnan(t_p):
+                print(f"  T-statistic: nan, p-value: nan")
                 print(f"  Result: No significant difference in Benford scores")
+            else:
+                print(f"  T-statistic: {t_stat:.3f}, p-value: {format_p(t_p)}")
+                
+                if t_p < 0.05:
+                    better_dir = dir1_name if stats1['avg_score'] > stats2['avg_score'] else dir2_name
+                    print(f"  Result: {better_dir} has significantly higher Benford scores")
+                else:
+                    print(f"  Result: No significant difference in Benford scores")
     except Exception as e:
         print(f"T-test error: {e}")
     

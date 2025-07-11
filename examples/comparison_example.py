@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from benford_midi.analysis import compare_directories
 
+
 def main():
     # Define the base directory for MIDI files
     base_dir = Path("path/to/your/midi/files")  # Update this path
@@ -29,6 +30,7 @@ def main():
     print(df1)
     print(f"\nResults for {dir2.name}:")
     print(df2)
+
 
 if __name__ == "__main__":
     main()
